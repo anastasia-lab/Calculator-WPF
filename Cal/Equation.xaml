@@ -22,8 +22,8 @@
         <Button x:Name="buttonQuadratic" Content="Квадратное уравнение" HorizontalAlignment="Left" Margin="10,157,0,0" VerticalAlignment="Top" Width="146" Height="34" Click="ButtonQuadratic_Click"/>
         <Label x:Name="labelC" Content="c**" HorizontalAlignment="Left" Margin="299,8,0,0" VerticalAlignment="Top" Height="26"/>
         <TextBox x:Name="textBoxC" HorizontalAlignment="Left" Height="23" Margin="323,11,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77"/>
-        <Button x:Name="buttonClear" Content="Очистить всё" HorizontalAlignment="Left" Margin="430,157,0,0" VerticalAlignment="Top" Width="99" Height="33" Click="ButtonClear_Click"/>
-        <Button x:Name="buttonLinear" Content="Линейное уравнение" HorizontalAlignment="Left" Margin="187,162,0,0" VerticalAlignment="Top" Width="159" Height="28" Click="ButtonLinear_Click"/>
+        <Button x:Name="buttonClear" Content="Очистить всё" HorizontalAlignment="Left" Margin="506,162,0,0" VerticalAlignment="Top" Width="99" Height="33" Click="ButtonClear_Click"/>
+        <Button x:Name="buttonLinear" Content="Линейное уравнение (с одной переменной)" HorizontalAlignment="Left" Margin="187,162,0,0" VerticalAlignment="Top" Width="256" Height="29" Click="ButtonLinear_Click"/>
         <Label x:Name="labelst" Content="** c - результат уравнения, если оно линейное" HorizontalAlignment="Left" Margin="1,384,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labe2st1" Content="* переменные писать со знаком минус, если указана разность" HorizontalAlignment="Left" Margin="1,358,0,0" VerticalAlignment="Top" Width="381"/>
 

@@ -19,11 +19,11 @@ namespace Cal
     /// </summary>
     public partial class Equation : Window
     {
-        double a;
-        double b;
-        double c;
-        double x1;
-        double x2;
+        double FirstValue; // первое значение
+        double SecondValue; // второе значение
+        double ThirdValue; // третье значение
+        double FirstRoot; // первый корень (х1)
+        double SecondRoot; // второй корень (х2)
         double result;
 
         public Equation()
@@ -31,24 +31,24 @@ namespace Cal
             InitializeComponent();
         }
 
-        private void ButtonQuadratic_Click(object sender, RoutedEventArgs e)
+        private void ButtonQuadratic_Click(object sender, RoutedEventArgs e) // квадратное уравнение
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
-                b = Convert.ToInt32(textBoxB.Text);
-                c = Convert.ToInt32(textBoxC.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
+                SecondValue = Convert.ToInt32(textBoxB.Text);
+                ThirdValue = Convert.ToInt32(textBoxC.Text);
 
-                double dis = Math.Pow(b, 2) - (4 * a * c);
+                double dis = Math.Pow(SecondValue, 2) - (4 * FirstValue * ThirdValue); // дискреминант
 
                 if (dis >= 0)
                 {
-                    x1 = (-b - Math.Sqrt(dis)) / (2 * a);
-                    x2 = (-b + Math.Sqrt(dis)) / (2 * a);
+                    FirstRoot = (-SecondValue - Math.Sqrt(dis)) / (2 * FirstValue);
+                    SecondRoot = (-SecondValue + Math.Sqrt(dis)) / (2 * FirstValue);
 
                     textBoxDis.Text = dis.ToString();
-                    textBoxX1.Text = x1.ToString();
-                    textBoxX2.Text = x2.ToString();
+                    textBoxX1.Text = FirstRoot.ToString();
+                    textBoxX2.Text = SecondRoot.ToString();
                 }
                 else if (dis < 0)
                     textBoxDis.Text = "Дискреминант меньше нуля";
@@ -59,7 +59,7 @@ namespace Cal
             }
         }
 
-        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        private void ButtonClear_Click(object sender, RoutedEventArgs e) // очистить все поля
         {
             textBoxA.Clear();
             textBoxB.Clear();
@@ -70,15 +70,15 @@ namespace Cal
             textBoxX2.Clear();
         }
 
-        private void ButtonLinear_Click(object sender, RoutedEventArgs e)
+        private void ButtonLinear_Click(object sender, RoutedEventArgs e) // линейное уравнение
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
-                b = Convert.ToInt32(textBoxB.Text);
-                c = Convert.ToInt32(textBoxC.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
+                SecondValue = Convert.ToInt32(textBoxB.Text);
+                ThirdValue = Convert.ToInt32(textBoxC.Text);
 
-                result = (c - b) / a;
+                result = (ThirdValue - SecondValue) / FirstValue;
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)

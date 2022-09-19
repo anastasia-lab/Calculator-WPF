@@ -8,8 +8,8 @@ namespace Cal
     /// </summary>
     public partial class MainWindow : Window
     {
-        double a;
-        double b;
+        double FirstValue; // первое значение
+        double SecondValue; // второе значение
         double result;
 
         public MainWindow()
@@ -21,10 +21,10 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
-                b = Convert.ToInt32(textBoxB.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
+                SecondValue = Convert.ToInt32(textBoxB.Text);
 
-                result = a + b;
+                result = FirstValue + SecondValue;
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -37,10 +37,10 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
-                b = Convert.ToInt32(textBoxB.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
+                SecondValue = Convert.ToInt32(textBoxB.Text);
 
-                result = a - b;
+                result = FirstValue - SecondValue;
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -53,10 +53,10 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
-                b = Convert.ToInt32(textBoxB.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
+                SecondValue = Convert.ToInt32(textBoxB.Text);
 
-                result = a * b;
+                result = FirstValue * SecondValue;
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -69,10 +69,10 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
-                b = Convert.ToInt32(textBoxB.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
+                SecondValue = Convert.ToInt32(textBoxB.Text);
 
-                result = a / b;
+                result = FirstValue / SecondValue;
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -85,9 +85,9 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
 
-                result = Math.Cos(a);
+                result = Math.Cos(FirstValue);
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -100,9 +100,9 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
 
-                result = Math.Sin(a);
+                result = Math.Sin(FirstValue);
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -115,9 +115,9 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
 
-                result = Math.Tan(a);
+                result = Math.Tan(FirstValue);
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -130,9 +130,9 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
 
-                result = Math.Cos(a) / Math.Sin(a);
+                result = Math.Cos(FirstValue) / Math.Sin(FirstValue);
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -145,9 +145,9 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
 
-                result = Math.Sqrt(a);
+                result = Math.Sqrt(FirstValue);
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -160,10 +160,10 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
-                b = Convert.ToInt32(textBoxB.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
+                SecondValue = Convert.ToInt32(textBoxB.Text);
 
-                result = Math.Log(a, b);
+                result = Math.Log(FirstValue, SecondValue);
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -176,9 +176,9 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
 
-                result = Math.Exp(a);
+                result = Math.Exp(FirstValue);
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -191,10 +191,10 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToInt32(textBoxA.Text);
-                b = Convert.ToInt32(textBoxB.Text);
+                FirstValue = Convert.ToInt32(textBoxA.Text);
+                SecondValue = Convert.ToInt32(textBoxB.Text);
 
-                result = Math.Pow(a, b);
+                result = Math.Pow(FirstValue, SecondValue);
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
@@ -229,22 +229,22 @@ namespace Cal
         {
             try
             {
-                a = Convert.ToDouble(textBoxA.Text);
+                FirstValue = Convert.ToDouble(textBoxA.Text);
 
-                result = FactorialFibonachi.Factorial(a);
+                result = FactorialFibonachi.Factorial(FirstValue);
                 textBoxResult.Text = result.ToString();
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OKCancel, MessageBoxImage.Error);
             }
         }
 
         private void ButtonFibonachi_Click(object sender, RoutedEventArgs e) // число из последовательности фибовани
         {
-            a = Convert.ToDouble(textBoxA.Text);
+            FirstValue = Convert.ToDouble(textBoxA.Text);
 
-            result = FactorialFibonachi.Fibonachi(a);
+            result = FactorialFibonachi.Fibonachi(FirstValue);
             textBoxResult.Text = result.ToString();
         }
     }
