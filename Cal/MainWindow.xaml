@@ -6,30 +6,166 @@
         xmlns:local="clr-namespace:Cal"
         mc:Ignorable="d"
         Title="Калькулятор" Height="450" Width="500"  WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="TextFont">
+            <Setter Property="ItemsControl.FontFamily" Value="Comic Sans MS"/>
+        </Style>
+        <Style x:Key="BackgroundBotton" TargetType="Button">
+            <Setter Property="Width" Value="77"/>
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Background" Value="MistyRose"/>
+
+        </Style>
+
+    </Window.Resources>
     <Grid>
-        <TextBox x:Name="textBoxA" HorizontalAlignment="Left" Height="26" Margin="65,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <Label x:Name="labelResult" Content="Результат" HorizontalAlignment="Left" Margin="0,43,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="buttonSum" Content="Сумма" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSum_Click"/>
-        <Button x:Name="buttonDifference" Content="Разность" HorizontalAlignment="Left" Margin="117,107,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDifference_Click"/>
-        <Button x:Name="buttonMyltiply" Content="Умножение" HorizontalAlignment="Left" Margin="228,107,0,0" VerticalAlignment="Top" Width="75" Click="ButtonMyltiply_Click"/>
-        <Button x:Name="buttonDivision" Content="Деление" HorizontalAlignment="Left" Margin="340,107,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDivision_Click"/>
-        <Button x:Name="buttonCos" Content="cos" HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Width="75" Click="ButtonCos_Click"/>
-        <Button x:Name="buttonSin" Content="sin" HorizontalAlignment="Left" Margin="117,148,0,0" VerticalAlignment="Top" Width="75" Click="ButtonSin_Click"/>
-        <Button x:Name="buttonTg" Content="tg" HorizontalAlignment="Left" Margin="228,148,0,0" VerticalAlignment="Top" Width="75" Click="ButtonTg_Click"/>
-        <Button x:Name="buttonCtg" Content="ctg" HorizontalAlignment="Left" Margin="340,148,0,0" VerticalAlignment="Top" Width="75" Click="ButtonCtg_Click"/>
-        <Button x:Name="buttonEquation" Content="Решить уравнение" HorizontalAlignment="Left" Margin="10,234,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.508,0.455" Click="ButtonEquation_Click"/>
-        <Button x:Name="buttonClear" Content="Очистить всё" HorizontalAlignment="Left" Margin="391,234,0,0" VerticalAlignment="Top" Width="91" Click="ButtonClear_Click"/>
-        <Label x:Name="labelA" Content="a" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="labelB" Content="b" HorizontalAlignment="Left" Margin="208,10,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBoxB" HorizontalAlignment="Left" Height="26" Margin="248,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
-        <TextBox x:Name="textBoxResult" HorizontalAlignment="Left" Height="24" Margin="76,45,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
-        <Button x:Name="buttonSqrt" Content="Квадратный корень" HorizontalAlignment="Left" Margin="340,194,0,0" VerticalAlignment="Top" Width="126" Click="ButtonSqrt_Click"/>
-        <Button x:Name="buttonDegree" Content="Степень" HorizontalAlignment="Left" Margin="228,194,0,0" VerticalAlignment="Top" Width="75" Click="ButtonDegree_Click"/>
-        <Button x:Name="buttonLog" Content="log" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" Width="75" Click="ButtonLog_Click"/>
-        <Button x:Name="buttonE" Content="e*" HorizontalAlignment="Left" Margin="117,194,0,0" VerticalAlignment="Top" Width="75" Click="ButtonE_Click"/>
+        <Rectangle >
+            <Rectangle.Fill>
+                <LinearGradientBrush>
+                    <GradientStop Color="#54d5f2" Offset="0.2"/>
+                    <GradientStop Color="#c471ed" Offset="0.5"/>
+                    <GradientStop Color="#f64f59" Offset="0.8"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <TextBox x:Name="textBoxA" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Height="26" Margin="65,10,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Background="Lavender">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Label x:Name="labelResult" Content="Результат"  HorizontalAlignment="Left" Margin="0,43,0,0" VerticalAlignment="Top" Style="{StaticResource TextFont}"/>
+        <Button x:Name="buttonSum" Content="Сумма" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonSum_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonDifference" Content="Разность" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="117,107,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonDifference_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonMyltiply" Content="Умножение" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="228,107,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonMyltiply_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonDivision" Content="Деление" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="340,107,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonDivision_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonCos" Content="cos" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Margin="10,148,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonCos_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonSin" Content="sin" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Margin="117,148,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonSin_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonTg" Content="tg" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Margin="228,148,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonTg_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonCtg" Content="ctg" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Margin="340,148,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonCtg_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonEquation" Content="Решить уравнение" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="10,234,0,0" VerticalAlignment="Top" Width="120" Height="25" RenderTransformOrigin="0.508,0.455" Click="ButtonEquation_Click" Background="MistyRose">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonClear" Content="Очистить всё" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="391,234,0,0" VerticalAlignment="Top" Width="91" Height="25" Click="ButtonClear_Click" Background="MistyRose">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label x:Name="labelA" Content="a" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Style="{StaticResource TextFont}"/>
+        <Label x:Name="labelB" Content="b" HorizontalAlignment="Left" Margin="208,10,0,0" VerticalAlignment="Top" Style="{StaticResource TextFont}"/>
+        <TextBox x:Name="textBoxB" HorizontalAlignment="Left" Height="26" FontFamily="Comic Sans MS" Margin="248,10,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="118" Background="Lavender">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="textBoxResult" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Height="24" Margin="76,45,0,0" TextAlignment="Center" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" Background="Lavender">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="buttonSqrt" Content="Квадратный корень" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="340,194,0,0" VerticalAlignment="Top" Width="126" Height="25" Click="ButtonSqrt_Click" Background="MistyRose">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonDegree" Content="Степень" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Margin="228,194,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonDegree_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonLog" Content="log" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Margin="10,194,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonLog_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonE" Content="e*" HorizontalAlignment="Left" FontFamily="Comic Sans MS" Margin="117,194,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonE_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <Label x:Name="labele" Content="* - число а возводит в степень" HorizontalAlignment="Left" Margin="0,367,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="buttonFactorial" Content="Факториал" HorizontalAlignment="Left" Margin="160,234,0,0" VerticalAlignment="Top" Width="75" Click="ButtonFactorial_Click"/>
-        <Button x:Name="buttonFibonachi" Content="число Фибоначи**" HorizontalAlignment="Left" Margin="258,234,0,0" VerticalAlignment="Top" Width="108" Click="ButtonFibonachi_Click"/>
+        <Button x:Name="buttonFactorial" Content="Факториал" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="160,234,0,0" VerticalAlignment="Top" Style="{StaticResource BackgroundBotton}" Click="ButtonFactorial_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="buttonFibonachi" Content="число Фибоначи**" FontFamily="Comic Sans MS" HorizontalAlignment="Left" Margin="258,234,0,0" VerticalAlignment="Top" Width="108" Height="25" Click="ButtonFibonachi_Click" Background="MistyRose">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
         <Label x:Name="label" Content="** - выводит число а из последовательности" HorizontalAlignment="Left" Margin="0,393,0,0" VerticalAlignment="Top" Width="276" Height="27"/>
 
     </Grid>
